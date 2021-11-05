@@ -15,6 +15,10 @@ class CreateGruposTable extends Migration
     {
         Schema::create('grupos', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('data');
+            $table->string('valor-max');
+            $table->string('valor-min');
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class CreateArmazenamentosTable extends Migration
     {
         Schema::create('armazenamentos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()
+            ->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('grupo_id')->constrained()
+            ->onDelete('cascade')->onUpdate('cascade');
+            $table->string('sorteados');
             $table->timestamps();
         });
     }
