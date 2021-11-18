@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User ;
 
-
-class User extends Controller
+class UserController extends Controller
 {
     public function index()
     {
@@ -86,7 +85,7 @@ class User extends Controller
     {
         $user = User :: find ( $user_id );
         if( isset( $user )){
-            $user - >delete () ;
+            $user -> delete ();
         } else{
             return response('Usuário não encontrad0', 404) ;
         }
