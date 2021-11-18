@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Grupo;
 use Illuminate\Http\Request;
 
-class Grupo extends Controller
+class GrupoController extends Controller
 {
     public function index()
     {
@@ -34,15 +34,15 @@ class Grupo extends Controller
       $validated = $request->validate([
         'nome' => 'required|max:255',
         'data' => 'required|max:255',
-        'valor-max' => 'required|max:255',
-        'valor-min' => 'required|max:255',
+        'valor_max' => 'required|max:255',
+        'valor_min' => 'required|max:255',
       ]);
       if ($validated) {
         $grupo = new Grupo();
         $grupo->nome = $request->get('nome');
         $grupo->data = $request->get('data');
-        $grupo->valor-max = $request->get('valor-max');
-        $grupo->valor-min = $request->get('valor-min');
+        $grupo->valor_max = $request->get('valor_max');
+        $grupo->valor_min = $request->get('valor_min');
         if ($request->get('grupo_id')) {
           $grupo->grupo_id = $request->get('grupo_id');
         }
@@ -71,14 +71,14 @@ class Grupo extends Controller
       $validated = $request->validate([
         'nome' => 'required|max:255',
         'data' => 'required|max:255',
-        'valor-max' => 'required|max:255',
-        'valor-min' => 'required|max:255',
+        'valor_max' => 'required|max:255',
+        'valor_min' => 'required|max:255',
       ]);
       if ($validated) {
         $grupo->nome = $request->get('nome');
         $grupo->data = $request->get('data');
-        $grupo->valor-max = $request->get('valor-max');
-        $grupo->valor-min = $request->get('valor-min');
+        $grupo->valor_max = $request->get('valor_max');
+        $grupo->valor_min = $request->get('valor_min');
         $grupo->save();
         return redirect("/grupo");
       }
@@ -89,7 +89,7 @@ class Grupo extends Controller
     {
         $grupo = grupo :: find ( $grupo_id );
         if( isset( $grupo )){
-            $grupo - >delete () ;
+            $grupo -> delete () ;
         } else{
             return response('grupo não encontrad0', 404) ;
         }
