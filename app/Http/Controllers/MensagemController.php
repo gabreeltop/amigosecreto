@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\Grupo;
 use Illuminate\Http\Request;
 
-class Mensagem extends Controller
+class MensagemController extends Controller
 {
     public function index()
     {
