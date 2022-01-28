@@ -21,8 +21,7 @@ class MensagemController extends Controller
      */
     public function create()
     {
-      $mensagem = Mensagem::all();
-      return view("novomensagem", compact('mensagem'));
+        return view('grupo');
     }
   
     /**
