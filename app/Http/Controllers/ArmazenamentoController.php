@@ -25,11 +25,10 @@ class ArmazenamentoController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function create()
-  {
-    $armazenamento = Armazenamento::all();
-    return view("novoarmazenamento", compact('armazenamento'));
-  }
+public function create()
+    {
+        return view('armazenamento');
+    }
 
   /**
    * Store a newly created resource in storage.
