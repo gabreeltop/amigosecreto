@@ -17,10 +17,9 @@ class GrupoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+public function create()
     {
-      $grupo= Grupo::all();
-      return view("novogrupo", compact('grupo'));
+        return view('grupo');
     }
   
     /**
